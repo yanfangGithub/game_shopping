@@ -1,0 +1,68 @@
+server:
+  tomcat:
+    threads:
+      max: 150
+  port: 8080
+spring:
+  application:
+    name: game
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/tb_game?useSSL=false&serverTimezone=UTC
+    username: root
+    password: Zz123456
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    #password: 123456
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 1
+        time-between-eviction-runs: 10s
+  jackson:
+    default-property-inclusion: non_null # JSON处理时忽略非空字段
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+mybatis-plus:
+  type-aliases-package: com.game.entity # 别名扫描包
+
+#qq邮箱设置
+email:
+  user: 2489566936@qq.com
+  code: jcampqkbpaumebcj
+  host: smtp.qq.com
+  auth: true
+#webase平台的相关配置
+contract:
+  URL: "http://114.55.116.212:5002/WeBASE-Front/trans/handle"
+  adminAddress: "0x6cf2a77e1e9efd9886aa465582a6ee606fe41085"
+  Address: "0xb90697178d18ccde2adef4a747eb9e5eb447fa62"
+  name: "Order"
+
+
+logging:
+  level:
+    com.game: debug
+  pattern:
+    dateformat: mm:ss.SSS
+
+knife4j:
+  enable: true
+  openapi:
+    title: 接口文档
+    description: "虚拟产品交易平台接口测试文档"
+    url: https://docs.xiaominfo.com
+    version: v4.0
+    license: Apache 2.0
+    license-url: https://stackoverflow.com/
+    terms-of-service-url: https://stackoverflow.com/
+    group:
+      test1:
+        group-name: 分组名称
+        api-rule: package
+        api-rule-resources:
+          - com.game.controller

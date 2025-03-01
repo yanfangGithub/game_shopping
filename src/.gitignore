@@ -1,0 +1,11 @@
+# 忽略所有的.class文件
+*.class
+
+# 忽略所有的.idea目录
+.idea/
+
+# 忽略所有的target目录
+/target/
+/test/
+
+# 忽略特定的文件
